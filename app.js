@@ -86,4 +86,7 @@ function triangleType(side1, side2, side3) {
   // Scalene
   return "Scalene";
 }
-console.log(triangleType(7, 2, 2));
+console.log(triangleType(3, 4, 5));
+console.log(triangleType(4, 1, 2));
+console.log(triangleType(3, 3, 3));
+console.log(triangleType(3, 3, 4));
