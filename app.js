@@ -69,6 +69,12 @@ getQuadrant(-5, -3);
 
 // // Exercise 4 Section
 console.log("EXERCISE 4:\n==========\n");
+function getTriangleType(a, b, c) {
+  if (a + b < c) {
+    return "Invalid triangle";
+  }
+}
+
 function triangleType(side1, side2, side3) {
   if (side1 + side2 < side3 || side1 + side3 < side2) {
     return "Invalid triangle";
