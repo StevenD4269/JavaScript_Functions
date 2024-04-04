@@ -69,21 +69,21 @@ getQuadrant(-5, -3);
 
 // // Exercise 4 Section
 console.log("EXERCISE 4:\n==========\n");
-function getTriangleType(a, b, c) {
-  if (a + b < c) {
-    return "Invalid triangle";
-  }
-}
-
 function triangleType(side1, side2, side3) {
-  if (side1 + side2 < side3 || side1 + side3 < side2) {
+  if (side1 + side2 < side3 || side1 + side3 < side2 || side2 + side3 < side1) {
     return "Invalid triangle";
-  } else if (side1 === side2 && side2 === side3) {
-    return "Equilateral triangle";
-  } else if (side1 === side2 || side1 === side3 || side2 === side3) {
-    return "isosceles triangle";
-  } else {
-    return "Scalene";
   }
+  // if you "return" the function it essentially ends it so the next one is an "if" not an "else if"
+  if (side1 === side2 && side2 === side3) {
+    return "Equilateral triangle";
+  }
+
+  // Isosceles
+  if (side1 === side2 || side1 === side3 || side2 === side3) {
+    return "Isosceles triangle";
+  }
+
+  // Scalene
+  return "Scalene";
 }
 console.log(triangleType(7, 2, 2));
