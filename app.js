@@ -90,3 +90,23 @@ console.log(triangleType(3, 4, 5));
 console.log(triangleType(4, 1, 2));
 console.log(triangleType(3, 3, 3));
 console.log(triangleType(3, 3, 4));
+
+// Exercise 5
+console.log("EXERCISE 5:\n==========\n");
+function dataPlan(planLimit, currDay, usageSoFar) {
+  const days_in_cycle = 30;
+  const daysRemaining = days_in_cycle - currDay;
+  const dataRemaining = planLimit - usageSoFar;
+  const idealAverage = (planLimit / days_in_cycle).toFixed(2);
+  const currAvgUsage = (usageSoFar / currDay).toFixed(2);
+  const projectedUsage = currAvgUsage * days_in_cycle;
+  const exceededUsage = (projectedUsage - planLimit).toFixed(2);
+  const newIdealUsage = (dataRemaining / daysRemaining).toFixed(2);
+
+  let output = "";
+  output += `${currDay} days used, ${daysRemaining} days remaining\nAverage daily use: ${idealAverage} GB/day\n`;
+
+  output += `You are EXCEEDING your average daily use ${currAvgUsage} GB/day, continuing this high usage, you'll exceed your data plan by ${exceededUsage} GB.\nTo stay below your data plan, use no more than ${newIdealUsage} GB/day.`;
+  console.log(output);
+}
+dataPlan(100, 15, 56);
