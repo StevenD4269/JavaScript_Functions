@@ -109,9 +109,11 @@ function dataPlan(planLimit, currDay, usageSoFar) {
 
   if (exceededUsage > 0) {
     output += `You are EXCEEDING your average daily use ${currAvgUsage} GB/day, continuing this high usage, you'll exceed your data plan by ${exceededUsage} GB.\nTo stay below your data plan, use no more than ${newIdealUsage} GB/day.`;
-  } else if (underUsage > 0) {
+  } else if (currAvgUsage < idealAverage) {
     output += `You are UNDER your average daily us ${currAvgUsage} GB/day, continuing this reserved usage level, you'll still have ${underUsage} GB.\nTo take advantage of every last GB you have, start using ${newIdealUsage} GB/day.`;
+  } else {
+    output += "You are crushing it";
   }
   console.log(output);
 }
-dataPlan(100, 23, 39);
+dataPlan(100, 15, 50);
